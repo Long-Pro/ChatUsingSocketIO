@@ -17,3 +17,5 @@ io.on('connection', (socket) => {
 });
 socketAPI.io = io;
 module.exports = socketAPI;
+// https://socket.io/get-started/chat
+// https://medium.com/@tomberwick/configuring-socketio-with-expressjs-generator-and-nodejs-b3812aad953a
