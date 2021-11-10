@@ -7,6 +7,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+var io =require('./socketAPI')
+
 var app = express();
 
 // view engine setup
@@ -19,6 +21,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/html/index.html');
+});
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
